@@ -1,0 +1,18 @@
+SUBSYSTEM=="block", ACTION=="add|change", GOTO="orico_bays_start"
+GOTO="orico_bays_end"
+
+LABEL="orico_bays_start"
+
+# HCTL to Slot Mappings in sub-folder /dev/drives/by-bay/
+KERNELS=="5:0:0:0", SYMLINK+="disk/by-bay/bay1-%n"
+KERNELS=="6:0:0:0", SYMLINK+="disk/by-bay/bay2-%n"
+KERNELS=="7:0:0:0", SYMLINK+="disk/by-bay/bay3-%n"
+KERNELS=="9:0:0:0", SYMLINK+="disk/by-bay/bay4-%n"
+KERNELS=="8:0:0:0", SYMLINK+="disk/by-bay/bay5-%n"
+KERNELS=="0:0:0:0", SYMLINK+="disk/by-bay/bay6-%n"
+KERNELS=="1:0:0:0", SYMLINK+="disk/by-bay/bay7-%n"
+KERNELS=="2:0:0:0", SYMLINK+="disk/by-bay/bay8-%n"
+KERNELS=="4:0:0:0", SYMLINK+="disk/by-bay/bay9-%n"
+KERNELS=="3:0:0:0", SYMLINK+="disk/by-bay/bay10-%n"
+
+LABEL="orico_bays_end"
