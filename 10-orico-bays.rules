@@ -3,16 +3,32 @@ GOTO="orico_bays_end"
 
 LABEL="orico_bays_start"
 
-# HCTL to Slot Mappings in sub-folder /dev/drives/by-bay/
-KERNELS=="5:0:0:0", SYMLINK+="disk/by-bay/bay1-%n"
-KERNELS=="6:0:0:0", SYMLINK+="disk/by-bay/bay2-%n"
-KERNELS=="7:0:0:0", SYMLINK+="disk/by-bay/bay3-%n"
-KERNELS=="9:0:0:0", SYMLINK+="disk/by-bay/bay4-%n"
-KERNELS=="8:0:0:0", SYMLINK+="disk/by-bay/bay5-%n"
-KERNELS=="0:0:0:0", SYMLINK+="disk/by-bay/bay6-%n"
-KERNELS=="1:0:0:0", SYMLINK+="disk/by-bay/bay7-%n"
-KERNELS=="2:0:0:0", SYMLINK+="disk/by-bay/bay8-%n"
-KERNELS=="4:0:0:0", SYMLINK+="disk/by-bay/bay9-%n"
-KERNELS=="3:0:0:0", SYMLINK+="disk/by-bay/bay10-%n"
+# --- HCTL to Slot Mappings ---
+
+# Rules for the main disk device (no partition number, e.g., /dev/disk/by-bay/bay1)
+# KERNEL short name will be "sdX" (e.g., sda).
+ENV{DEVTYPE}=="disk", KERNELS=="5:0:0:0", SYMLINK+="disk/by-bay/bay1"
+ENV{DEVTYPE}=="disk", KERNELS=="6:0:0:0", SYMLINK+="disk/by-bay/bay2"
+ENV{DEVTYPE}=="disk", KERNELS=="7:0:0:0", SYMLINK+="disk/by-bay/bay3"
+ENV{DEVTYPE}=="disk", KERNELS=="9:0:0:0", SYMLINK+="disk/by-bay/bay4"
+ENV{DEVTYPE}=="disk", KERNELS=="8:0:0:0", SYMLINK+="disk/by-bay/bay5"
+ENV{DEVTYPE}=="disk", KERNELS=="0:0:0:0", SYMLINK+="disk/by-bay/bay6"
+ENV{DEVTYPE}=="disk", KERNELS=="1:0:0:0", SYMLINK+="disk/by-bay/bay7"
+ENV{DEVTYPE}=="disk", KERNELS=="2:0:0:0", SYMLINK+="disk/by-bay/bay8"
+ENV{DEVTYPE}=="disk", KERNELS=="4:0:0:0", SYMLINK+="disk/by-bay/bay9"
+ENV{DEVTYPE}=="disk", KERNELS=="3:0:0:0", SYMLINK+="disk/by-bay/bay10"
+
+# Rules for partitions (has a partition number, e.g., /dev/disk/by-bay/bay1-p1)
+# KERNEL short name will be "sdXN" (e.g., sda1).
+ENV{DEVTYPE}=="partition", KERNELS=="5:0:0:0", SYMLINK+="disk/by-bay/bay1-part%n"
+ENV{DEVTYPE}=="partition", KERNELS=="6:0:0:0", SYMLINK+="disk/by-bay/bay2-part%n"
+ENV{DEVTYPE}=="partition", KERNELS=="7:0:0:0", SYMLINK+="disk/by-bay/bay3-part%n"
+ENV{DEVTYPE}=="partition", KERNELS=="9:0:0:0", SYMLINK+="disk/by-bay/bay4-part%n"
+ENV{DEVTYPE}=="partition", KERNELS=="8:0:0:0", SYMLINK+="disk/by-bay/bay5-part%n"
+ENV{DEVTYPE}=="partition", KERNELS=="0:0:0:0", SYMLINK+="disk/by-bay/bay6-part%n"
+ENV{DEVTYPE}=="partition", KERNELS=="1:0:0:0", SYMLINK+="disk/by-bay/bay7-part%n"
+ENV{DEVTYPE}=="partition", KERNELS=="2:0:0:0", SYMLINK+="disk/by-bay/bay8-part%n"
+ENV{DEVTYPE}=="partition", KERNELS=="4:0:0:0", SYMLINK+="disk/by-bay/bay9-part%n"
+ENV{DEVTYPE}=="partition", KERNELS=="3:0:0:0", SYMLINK+="disk/by-bay/bay10-part%n"
 
 LABEL="orico_bays_end"
