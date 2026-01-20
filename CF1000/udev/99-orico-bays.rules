@@ -18,7 +18,7 @@ ENV{DEVTYPE}=="disk", KERNELS=="2:0:0:0", SYMLINK+="disk/by-bay/bay8"
 ENV{DEVTYPE}=="disk", KERNELS=="4:0:0:0", SYMLINK+="disk/by-bay/bay9"
 ENV{DEVTYPE}=="disk", KERNELS=="3:0:0:0", SYMLINK+="disk/by-bay/bay10"
 
-# Rules for partitions (has a partition number, e.g., /dev/disk/by-bay/bay1-p1)
+# Rules for partitions (has a partition number, e.g., /dev/disk/by-bay/bay1-part1)
 # KERNEL short name will be "sdXN" (e.g., sda1).
 ENV{DEVTYPE}=="partition", KERNELS=="5:0:0:0", SYMLINK+="disk/by-bay/bay1-part%n"
 ENV{DEVTYPE}=="partition", KERNELS=="6:0:0:0", SYMLINK+="disk/by-bay/bay2-part%n"

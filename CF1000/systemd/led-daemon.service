@@ -1,0 +1,15 @@
+[Unit]
+Description=NAS HDD Activity and ZFS Health LED Daemon
+After=zfs-import.target udev.service
+ConditionPathExists=/dev/disk/by-bay
+
+[Service]
+# Replace with the actual path to your script
+ExecStart=/usr/bin/python3 /mnt/YOUR_POOL_NAME/Orico_Utils/scripts/led_daemon.py
+Restart=always
+RestartSec=5
+# Direct memory access requires root
+User=root
+
+[Install]
+WantedBy=multi-user.target
