@@ -19,6 +19,6 @@ Enter the below into the command box (and replace `YOUR_POOL_NAME` with your act
 
 `bash cp /mnt/YOUR_POOL_NAME/Orico_Utils/systemd/led-daemon.service /etc/systemd/system/ && bash cp /mnt/YOUR_POOL_NAME/Orico_Utils/udev/99-orico-bays.rules /etc/udev/rules.d/ && udevadm control --reload-rules && udevadm trigger && systemctl daemon-reload && systemctl enable --now led-daemon.service`
 
-This ensures that the service persists beyond a reboot and OS updates.
+This ensures that the udev rules and service persists beyond a reboot and OS updates.
 
 You can then reboot your Truenas Instance for this to take effect or execute the command `systemctl start led-daemon.service` from the shell using Sudo for it to take effect without a restart.
