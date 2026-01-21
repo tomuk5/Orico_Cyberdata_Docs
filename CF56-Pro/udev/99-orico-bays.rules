@@ -1,0 +1,24 @@
+SUBSYSTEM=="block", ACTION=="add|change", GOTO="orico_bays_start"
+GOTO="orico_bays_end"
+
+LABEL="orico_bays_start"
+
+# --- HCTL to Slot Mappings ---
+
+# Rules for the main disk device (no partition number, e.g., /dev/disk/by-bay/bay1)
+# KERNEL short name will be "sdX" (e.g., sda).
+ENV{DEVTYPE}=="disk", KERNELS=="5:0:0:0", SYMLINK+="disk/by-bay/bay1"
+ENV{DEVTYPE}=="disk", KERNELS=="6:0:0:0", SYMLINK+="disk/by-bay/bay2"
+ENV{DEVTYPE}=="disk", KERNELS=="7:0:0:0", SYMLINK+="disk/by-bay/bay3"
+ENV{DEVTYPE}=="disk", KERNELS=="9:0:0:0", SYMLINK+="disk/by-bay/bay4"
+ENV{DEVTYPE}=="disk", KERNELS=="8:0:0:0", SYMLINK+="disk/by-bay/bay5"
+
+# Rules for partitions (has a partition number, e.g., /dev/disk/by-bay/bay1-part1)
+# KERNEL short name will be "sdXN" (e.g., sda1).
+ENV{DEVTYPE}=="partition", KERNELS=="5:0:0:0", SYMLINK+="disk/by-bay/bay1-part%n"
+ENV{DEVTYPE}=="partition", KERNELS=="6:0:0:0", SYMLINK+="disk/by-bay/bay2-part%n"
+ENV{DEVTYPE}=="partition", KERNELS=="7:0:0:0", SYMLINK+="disk/by-bay/bay3-part%n"
+ENV{DEVTYPE}=="partition", KERNELS=="9:0:0:0", SYMLINK+="disk/by-bay/bay4-part%n"
+ENV{DEVTYPE}=="partition", KERNELS=="8:0:0:0", SYMLINK+="disk/by-bay/bay5-part%n"
+
+LABEL="orico_bays_end"
