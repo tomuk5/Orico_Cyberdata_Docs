@@ -1,7 +1,7 @@
 **Instructions for Truenas SCALE usage**
+#
 **Please note these LED mappings may be different on your CF56-Pro**
 #
-
 Create a Dataset on a pool called Orico_Utils and download the contents of the CF56-Pro folder in github into that Dataset. 
 (You can use the command `wget -qO- https://github.com/tomuk5/Orico_Cyberdata_Docs/archive/refs/heads/main.tar.gz | tar -xzv --strip-components=2 "Orico_Cyberdata_Docs-main/CF56-Pro"` if you are in a terminal and already inside the destination folder.)
 
