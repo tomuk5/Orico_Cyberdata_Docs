@@ -14,7 +14,7 @@ Add a *Post-Init* script of Type *Command*
 
 Enter the below into the command box (and replace `YOUR_POOL_NAME` with your actual pool name):
 
-`bash cp /mnt/YOUR_POOL_NAME/Orico_Utils/systemd/led-daemon.service /etc/systemd/system/ && bash cp /mnt/YOUR_POOL_NAME/Orico_Utils/udev/99-orico-bays.rules /etc/udev/rules.d/ && udevadm control --reload-rules && udevadm trigger && systemctl daemon-reload && systemctl enable --now led-daemon.service`
+`cp /mnt/YOUR_POOL_NAME/Orico_Utils/systemd/led-daemon.service /etc/systemd/system/ && cp /mnt/YOUR_POOL_NAME/Orico_Utils/udev/99-orico-bays.rules /etc/udev/rules.d/ && udevadm control --reload-rules && udevadm trigger && systemctl daemon-reload && systemctl enable --now led-daemon.service`
 
 This ensures that the udev rules and service persists beyond a reboot and OS updates.
 
