@@ -22,7 +22,7 @@ CPU cooler has a 86mm square mounting configuration and the stock cooler is 15mm
 There are currently no recommended aftermarket replacements (yet)
 
 
-** Case fan replacement **
+**Case fan replacement**
 
 Replacing the rear case fan's with 120mmx25mm fans requires the use of spacers (STL file in STL's directory).
 When fitting replacement fans, you will also need to trim back any foam that may foul the fan's movement before fitting the fan. 
