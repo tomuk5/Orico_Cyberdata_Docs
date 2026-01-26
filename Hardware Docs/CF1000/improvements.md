@@ -7,7 +7,7 @@ Wrap the ATx power supply cable to prevent rubbing through the insulation on the
 
 **Chassis grounding**
 
-replace the connection to ground on the PSU with a slide on/clip fit connector.
+replace the connection to ground on the PSU with a slide on/clip fit connector to make it easier to remove the case without having to stop and unscrew the cable from the PSU midway through.
 
 **NMVe heatspreader shorting**
 
@@ -28,3 +28,5 @@ Replacing the rear case fan's with 120mmx25mm fans requires the use of spacers (
 When fitting replacement fans, you will also need to trim back any foam that may foul the fan's movement before fitting the fan. 
 
 Do NOT trim back the foam in the corners where the fan mounts are located, only trim back where the fan blades may foul.
+
+Having said this, the existing 38mm depth fans from Orico when run at 40-45% duty are quiet and effective at thermal control of a fully loaded system under heavy use - there is minimal gain (if any) in replacing these fans.
